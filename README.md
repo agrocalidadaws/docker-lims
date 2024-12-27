@@ -1,6 +1,6 @@
 # Proyecto: Docker Lims
 
-Este proyecto contiene la configuracion Docker del proyecto lims.
+Este proyecto contiene la configuración Docker del proyecto LIMS.
 
 ---
 
@@ -22,17 +22,22 @@ Este sistema integra múltiples servicios como PHP, Nginx y Gotenberg para manej
    cd <NOMBRE_DEL_DIRECTORIO>
    ```
 
-3. Construye y levanta los contenedores utilizando Docker Compose:
+3. Crea el directorio `src` si aún no existe. Este será el lugar donde estará el código fuente de la aplicación:
+   ```bash
+   mkdir -p src
+   ```
+
+4. Construye y levanta los contenedores utilizando Docker Compose:
    ```bash
    docker-compose up -d --build
    ```
 
-4. Asegúrate de que los servicios estén corriendo:
+5. Asegúrate de que los servicios estén corriendo:
    ```bash
    docker ps
    ```
 
-5. Accede a la aplicación desde tu navegador en `http://localhost` o la URL configurada en tu archivo Nginx.
+6. Accede a la aplicación desde tu navegador en `http://localhost` o la URL configurada en tu archivo Nginx.
 
 ---
 
