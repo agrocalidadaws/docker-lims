@@ -18,6 +18,22 @@ services:
       - php
     networks:
       - agr-dev
+      
+  postgres:
+    image: postgres:15-alpine
+    container_name: agr-postgres
+    restart: unless-stopped
+    ports:
+      - "7432:5432" # Cambia el puerto para evitar conflictos
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: agr_db
+      POSTGRES_USER: agr_usuario
+      POSTGRES_PASSWORD: agr_clave
+      TZ: America/Guayaquil
+    networks:
+      - agr-dev
 
   php:
     build:
